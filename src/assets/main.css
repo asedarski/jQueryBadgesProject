@@ -9,12 +9,13 @@ body {
 }
 
 .course {
+  text-align: center;
   background: #F5F5F5;
   border-radius: 5px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 5px #EAEAEA;
   display: inline-block;
-  height: 350px;
+  height: 370px;
   margin: 20px 10px;
   padding: 15px 10px;
   width: 200px;
@@ -24,17 +25,35 @@ body {
   color: #999;
   font-size: 1.9rem;
   font-weight: 200;
-  min-height: 80px;;
+  min-height: 80px;
 }
 
 .course img {
   border: none;
-  height: 150px;
+  height: 180px;
   margin-bottom: 20px;
   max-width: 100%;
-  width: 150px;
+  width: 180px;
 }
 
 .course a {
   display: block;
+}
+
+.achivements {
+  text-align: center;
+  display: inline-block;
+  height: 250px;
+  margin: 20px 10px;
+  padding: 15px 10px;
+  width: 200px;
+}
+
+.achivements h3 {
+  width: 200px;
+}
+
+.achivements img {
+  height: 200px;
+  width: 200px;
 }

@@ -140,18 +140,18 @@ describe('The webpage', () => {
   });
 
   describe('the DOM should', () => {
-    let badges;
-    before(() => badges = document.querySelector('#badges'));
+    let completed;
+    before(() => completed = document.querySelector('#completed'));
 
     function hasFirstCourse() {
       assert(
-        !!badges.firstChild,
-        'Our `#badges` element does not have a `.course` child yet.'
+        !!completed.firstChild,
+        'Our `#completed` element does not have a `.course` child yet.'
       );
     }
 
-    it('have the #badges element @course-elements', () => {
-      assert(badges, 'Our page needs a `#badges` element.');
+    it('have the #completed element @course-elements', () => {
+      assert(completed, 'Our page needs a `#completed` element.');
     });
 
     it('have at least one child element @course-elements', () => {
@@ -160,18 +160,18 @@ describe('The webpage', () => {
 
     it('have child with the course class name @course-elements', () => {
       hasFirstCourse();
-      const firstCourse = badges.firstChild;
+      const firstCourse = completed.firstChild;
       const classes = Array.from(firstCourse.classList);
       assert(
         !!classes.find((className) => className === 'course'),
-        'The immediate children to `#badges` need to have `course` as their CSS class.'
+        'The immediate children to `#completed` need to have `course` as their CSS class.'
       );
     });
 
-    it('have x elements within the #badges @course-elements', () => {
+    it('have x elements within the #completed @course-elements', () => {
       hasFirstCourse();
-      assert(badges, 'Our page needs a `#badges` element.');
-      const courses = badges.childNodes;
+      assert(completed, 'Our page needs a `#completed` element.');
+      const courses = completed.childNodes;
       assert(
         courses.length === mockData.courses.completed.length,
         'We need a `.course` element for each item completed course in our AJAX response.'
@@ -180,8 +180,8 @@ describe('The webpage', () => {
 
     it('have h3 tags with the course titles @course-titles', () => {
       hasFirstCourse();
-      assert(badges, 'Our page needs a `#badges` element.');
-      const courses = Array.from(badges.querySelectorAll('.course'));
+      assert(completed, 'Our page needs a `#completed` element.');
+      const courses = Array.from(completed.querySelectorAll('.course'));
       courses.forEach((course, i) => {
         const h3 = course.querySelector('h3');
         assert(!!h3, 'Each `.course` needs an `h3` tag.');
@@ -194,10 +194,10 @@ describe('The webpage', () => {
       });
     });
 
-    it('have an img with the badge url @course-images', () => {
+    it('have an img with the completed url @course-images', () => {
       hasFirstCourse();
-      assert(badges, 'Our page needs a `#badges` element.');
-      const courses = Array.from(badges.querySelectorAll('.course'));
+      assert(completed, 'Our page needs a `#completed` element.');
+      const courses = Array.from(completed.querySelectorAll('.course'));
       courses.forEach((course, i) => {
         const img = course.querySelector('img');
         assert(!!img, 'Our `.course` elements need to contain an `img` element.');
@@ -211,8 +211,8 @@ describe('The webpage', () => {
 
     it('have an anchor pointing to the course url @course-buttons', () => {
       hasFirstCourse();
-      assert(badges, 'Our page needs a `#badges` element.');
-      const courses = Array.from(badges.querySelectorAll('.course'));
+      assert(completed, 'Our page needs a `#completed` element.');
+      const courses = Array.from(completed.querySelectorAll('.course'));
       courses.forEach((course, i) => {
         const anchor = course.querySelector('a');
         assert(!!anchor, 'Our `.course` elements need to contain an `a` element.');
